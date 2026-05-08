@@ -4,6 +4,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const authRoutes = require("./routes/auth");
+const folderRoutes = require("./routes/folderRoutes");
 
 const connectDB = require("./config/db");
 
@@ -15,7 +16,9 @@ app.use(express.json());
 app.use(cors());
 
 // Use auth routes
+
 app.use("/api/auth", authRoutes);
+app.use("/api/folders", folderRoutes);
 
 app.get("/", (req, res) => {
   res.send("API Running...");
