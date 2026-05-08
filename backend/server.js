@@ -6,6 +6,7 @@ const cors = require("cors");
 const authRoutes = require("./routes/auth");
 const folderRoutes = require("./routes/folderRoutes");
 const imageRoutes = require("./routes/imageRoutes");
+const deleteRoutes = require("./routes/deleteRoutes");
 
 const connectDB = require("./config/db");
 
@@ -21,7 +22,9 @@ app.use(cors());
 app.use("/api/auth", authRoutes);
 
 app.use("/api/folders", folderRoutes);
+
 app.use("/api/images", imageRoutes);
+app.use("/api/delete", deleteRoutes);
 
 app.get("/", (req, res) => {
   res.send("API Running...");
