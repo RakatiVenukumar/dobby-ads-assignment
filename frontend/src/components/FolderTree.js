@@ -62,8 +62,18 @@ const FolderTree = ({ parentId = null, folders, images = [], files = [], onSelec
           style={{ flex: 1, cursor: 'pointer' }}
         >📁 {renamingId === folder._id ? (
           <>
-            <input value={renameValue} onChange={e => setRenameValue(e.target.value)} onBlur={() => setRenamingId(null)} autoFocus style={{ width: 80 }} />
-            <button onClick={() => handleRename(folder._id)}>Save</button>
+            <input
+              value={renameValue}
+              onChange={e => setRenameValue(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') handleRename(folder._id);
+                if (e.key === 'Escape') { setRenamingId(null); setRenameValue(''); }
+              }}
+              autoFocus
+              style={{ width: 120 }}
+            />
+            <button type="button" onClick={(e) => { e.stopPropagation(); handleRename(folder._id); }}>Save</button>
+            <button type="button" onClick={(e) => { e.stopPropagation(); setRenamingId(null); setRenameValue(''); }}>Cancel</button>
           </>
         ) : (
           <span>{folder.name}</span>
