@@ -1,2 +1,0 @@
-"""
-WSGI config for logi
