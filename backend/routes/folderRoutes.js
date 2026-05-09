@@ -1,18 +1,25 @@
-const express = require('express');
-const { createFolder, getFolders, renameFolder, getFolderSize } = require('../controllers/folderController');
-// Rename folder
-router.patch('/:folderId/rename', auth, renameFolder);
-
-// Get folder size
-router.get('/:folderId/size', auth, getFolderSize);
-const auth = require('../middleware/authMiddleware');
-
+const express = require("express");
 const router = express.Router();
 
-// Create folder
-router.post('/', auth, createFolder);
+const auth = require("../middleware/authMiddleware");
 
-// Get all folders for user
-router.get('/', auth, getFolders);
+const {
+  createFolder,
+  getFolders,
+  renameFolder,
+  getFolderSize,
+} = require("../controllers/folderController");
+
+// Create folder
+router.post("/", auth, createFolder);
+
+// Get all folders
+router.get("/", auth, getFolders);
+
+// Rename folder
+router.patch("/:folderId/rename", auth, renameFolder);
+
+// Get folder size
+router.get("/:folderId/size", auth, getFolderSize);
 
 module.exports = router;
