@@ -55,6 +55,32 @@ http://localhost:3000
 5. Upload images or files to the selected folder.
 6. Use the sidebar to navigate nested folders and see file lists.
 
+## Screenshots
+
+### Signup
+
+![Signup - empty form](docs/screenshots/01-signup-empty.png)
+![Signup - filled form](docs/screenshots/02-signup-filled.png)
+
+### Login
+
+![Login - empty form](docs/screenshots/03-login-empty.png)
+![Login - filled form](docs/screenshots/04-login-filled.png)
+
+### Dashboard
+
+![Dashboard - folders panel](docs/screenshots/05-dashboard-folders.png)
+![Dashboard - selected folder](docs/screenshots/06-dashboard-selected.png)
+
+### Import
+
+![Import folder picker](docs/screenshots/07-import-picker.png)
+![Imported files in sidebar](docs/screenshots/08-imported-files.png)
+
+### Empty State
+
+![Empty dashboard](docs/screenshots/09-empty-dashboard.png)
+
 ## API Summary (Frontend Expectations)
 
 - `POST /api/auth/signup`
